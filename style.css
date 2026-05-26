@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* start frame work */
+.rotate-180 {
+    transform: rotate(180deg);
+}
+button:disabled {
+    background-color: black !important;
+    opacity: 0.3;
+    cursor: no-drop !important;
+}
+/* end frame work */
+
+h1 {
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    margin: 0 0 30px 0;
+}
+
+.score {
+    margin: 0 auto;
+    background-color: #009688;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    position: relative;
+
+
+    span {
+        font-size: 19px;
+    }
+
+    button {
+        padding: 5px;
+        background-color: #eee;
+        color: black;
+        outline: none;
+        position: absolute;
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+        right: 10px;
+        top: 8px;
+
+    }
+}
+
+.guess-game {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin: 20px auto;
+    flex-wrap: wrap;
+
+    .inputs {
+
+        > div {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            gap: 10px;
+        }
+        .disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        input {
+            width: 50px;
+            height: 50px;
+            outline: none;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            background-color: #fff;
+            border-bottom: 1px solid #333;
+            border-radius: 3px;
+
+            &.in-place {
+                background-color: #009688;
+                border: #009688;
+                color: white;
+            }
+            &.not-in-place {
+                background-color: #ffcb22;
+                border: #ffcb22;
+                color: white;
+            }
+            &.no {
+                background-color: #858585;
+                border: #858585;
+                color: white;
+            }
+        }
+
+    }
+
+    .control {
+        display: flex;
+        gap: 2%;
+        button {
+            height: 50px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .check {
+            width: 69%;
+            background: #ff5722;
+        }
+        .hint {
+            width: 29%;
+            background: #009688;
+        }
+
+    }
+
+    .massege {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin: 50px auto;
+    }
+
+    .rules {
+
+
+        h3 {
+            text-align: center;
+            font-weight: bold;
+        }
+        .arrows > div {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+
+            .arrow {
+                background-color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                margin: 10px 0;
+                gap: 5px;
+                cursor: pointer;
+                text-align: center;
+                transition: 0.2s;
+
+                p {
+                    font-size: 10px;
+                    margin: 0;
+                }
+            }
+            .arrow:first-child:hover, .arrow:last-child:hover {
+                color: white;
+                background-color: #009688;
+
+            }
+            .arrow:nth-child(2):hover {
+                color: white;
+                background-color: #ff5722;
+            }
+        }
+
+        .key_color, .arrows {
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            
+            .rule {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                background-color: white;
+                padding: 0 20px;
+                border-radius: 5px;
+                margin: 10px 0;
+                gap: 10px;
+
+                div {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 5px;
+                }
+                .in-place {
+                    background-color: #009688;
+                }
+                .not-in-place {
+                    background-color: #ffcb22;
+                }
+                .no {
+                    background-color: #858585;
+                }
+                p {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+
+        }
+
+        .next {
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                width: 95%;
+                margin: 0;
+                padding: 10px 0;
+                color: white;
+                background-color: #009688;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 5px;
+                border: 0px;
+                cursor: pointer;
+            }
+        }
+}
+}
+
+/* make it visible */
+footer {
+    display: none;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    margin: 0 50px 0 0;
+    position: fixed;
+    bottom: 0;
+}
