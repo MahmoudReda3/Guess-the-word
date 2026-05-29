@@ -39,20 +39,6 @@ h1 {
         font-size: 19px;
     }
 
-    button {
-        padding: 5px;
-        background-color: #eee;
-        color: black;
-        outline: none;
-        position: absolute;
-        border: none;
-        border-radius: 5px;
-        font-size: 15px;
-        cursor: pointer;
-        right: 10px;
-        top: 8px;
-
-    }
 }
 
 .guess-game {
