@@ -185,6 +185,10 @@ function handle_guess() {
             hint_btn.disabled = true;
 
             massege.innerHTML = `You Lose the word is ${correct_word}`
+
+            // reset score
+            reset()
+
         }
     }
 
@@ -243,8 +247,6 @@ next_btn.addEventListener("click", next_try);
 next_btn.disabled = true;
 
 // reset score
-document.querySelector(".reset").addEventListener("click", reset)
-
 function reset() {
     document.querySelector(".score span").innerHTML = 0;
 
