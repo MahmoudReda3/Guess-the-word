@@ -2,23 +2,29 @@
 const game_name = "Guess The Word";
 document.title = game_name;
 document.querySelector("h1").innerHTML = game_name;
-document.querySelector("footer").innerHTML = `${game_name} create by Mahmoud`;
+document.querySelector("footer").innerHTML = `${game_name} create by <span>Mahmoud</span>`;
 
 // game setting
 let tries = 6;
 let letters = 6;
 let current_try = 1;
 let hints = 2;
-let score_ponits = window.localStorage.getItem("score");
+let score_ponits;
 
 // manage score
+if (window.localStorage.getItem("score") === null || window.localStorage.getItem("score") === "[object Storage]") {
+    score_ponits = 0
+}else {
+    score_ponits = window.localStorage.getItem("score")
+}
+
 
 window.localStorage.setItem("score", score_ponits)
 document.querySelector(".score span").innerHTML = score_ponits
 
 
 // Pick correct word
-let correct_word = "";
+let correct_word;
 const words = [
   "apple", "beach", "bread", "chair", "cloud",
   "dance", "dream", "earth", "flame", "fruit",
@@ -230,10 +236,20 @@ function handle_backspace(event) {
         const inputs = document.querySelectorAll("input:not([disabled])");
         const current_index = Array.from(inputs).indexOf(event.target);
 
-        if (current_index > -1) {
+        if (current_index > 0) {
             const current_input = inputs[current_index];
-            // console.log(current_input)
-            current_input.value = "";
+            const prev_input = inputs[current_index - 1];
+            
+            
+            if (current_input.value.length > 0) {
+                current_input.value = "";
+            }
+            else if (current_input.value.length === 0) {
+                current_input.value = "";
+                prev_input.value = "";
+                prev_input.focus()
+            }
+
 
         }
     }
